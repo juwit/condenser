@@ -34,25 +34,25 @@ public record RaindropDto(
         long collectionId
 ) {
     /** Reference to a user ("$ref", "$id"). */
-    public static record UserRef(
+    public record UserRef(
             @JsonProperty("$ref") String ref,
             @JsonProperty("$id") long id
     ) { }
 
     /** Reminder object (currently only a nullable date). */
-    public static record Reminder(
+    public record Reminder(
             @Nullable String date
     ) { }
 
     /** Reference to a collection ("$ref", "$id", and "oid"). */
-    public static record CollectionRef(
+    public record CollectionRef(
             @JsonProperty("$ref") String ref,
             @JsonProperty("$id") long id,
             long oid
     ) { }
 
     /** Creator reference object. */
-    public static record CreatorRef(
+    public record CreatorRef(
             long _id,
             String avatar,
             String name,
