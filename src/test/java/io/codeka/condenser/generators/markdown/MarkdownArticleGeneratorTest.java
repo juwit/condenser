@@ -4,7 +4,6 @@ import io.codeka.condenser.domain.Article;
 import io.codeka.condenser.domain.Link;
 import io.codeka.condenser.domain.Tag;
 import io.codeka.condenser.domain.Source;
-import io.codeka.condenser.generators.markdown.MarkdownArticleGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
