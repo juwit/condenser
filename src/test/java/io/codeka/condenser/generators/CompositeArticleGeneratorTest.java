@@ -25,8 +25,8 @@ class CompositeArticleGeneratorTest {
     @DisplayName("generate should concatenate delegate generators in order")
     void generate_shouldConcatenateInOrder() throws Exception {
         // Given
-        ArticleGenerator genA = a -> "A";
-        ArticleGenerator genB = a -> "B";
+        ArticleGenerator genA = _ -> "A";
+        ArticleGenerator genB = _ -> "B";
         CompositeArticleGenerator composite = new CompositeArticleGenerator(List.of(genA, genB));
 
         // When
