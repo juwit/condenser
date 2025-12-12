@@ -33,11 +33,13 @@ class MarkdownArticleGeneratorTest {
                 <!--more-->
 
                 ## ☕ Java
+                
                 * [Java article](https://example.com/java)
 
                 > Java article analysis
 
                 ## 🐧 Linux
+                
                 * [Linux article](https://example.com/linux)
 
                 > Linux article analysis
@@ -74,6 +76,7 @@ class MarkdownArticleGeneratorTest {
                 <!--more-->
 
                 ## ☕ Java
+                
                 * [Java article](https://example.com/java) par [John Doe](https://john.doe.dev)
 
                 > Java article analysis
@@ -110,6 +113,7 @@ class MarkdownArticleGeneratorTest {
                 <!--more-->
 
                 ## ☕ Java
+                
                 * [Java article](https://example.com/java) _via_ [Hacker News](https://news.ycombinator.com)
 
                 > Java article analysis

@@ -49,6 +49,7 @@ public class MarkdownArticleGenerator implements ArticleGenerator {
 
         linksByTag.forEach((tag, links) -> {
             sb.append("## ").append(tag.markdownTitle()).append('\n');
+            sb.append('\n');
             for (Link link : links) {
                 sb.append(generateLinkMarkdown(link));
             }
