@@ -1,6 +1,7 @@
 package io.codeka.condenser.renderers;
 
 import io.codeka.condenser.domain.ArticleRenderer;
+import org.jspecify.annotations.NonNull;
 
 /**
  * Simple renderer that writes the generated article to the standard output.
@@ -8,7 +9,7 @@ import io.codeka.condenser.domain.ArticleRenderer;
 public class ConsoleArticleRenderer implements ArticleRenderer {
 
     @Override
-    public void render(String generatedArticle) {
+    public void render(@NonNull String generatedArticle) {
         System.out.print(generatedArticle);
     }
 }

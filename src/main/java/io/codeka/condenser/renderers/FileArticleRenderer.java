@@ -1,6 +1,7 @@
 package io.codeka.condenser.renderers;
 
 import io.codeka.condenser.domain.ArticleRenderer;
+import org.jspecify.annotations.NonNull;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -27,7 +28,7 @@ public class FileArticleRenderer implements ArticleRenderer {
     }
 
     @Override
-    public void render(String generatedArticle) {
+    public void render(@NonNull String generatedArticle) {
         try {
             Path parent = outputPath.getParent();
             if (parent != null) {
