@@ -3,6 +3,7 @@ package io.codeka.condenser.raindrop;
 import io.codeka.condenser.domain.Link;
 import io.codeka.condenser.domain.Source;
 import io.codeka.condenser.domain.Tag;
+import org.springframework.stereotype.Component;
 
 import java.net.URI;
 import java.util.Locale;
@@ -12,6 +13,7 @@ import java.util.Optional;
 /**
  * Maps Raindrop API DTOs to domain objects.
  */
+@Component
 public final class RaindropMapper {
 
     /**
