@@ -19,9 +19,18 @@
 
         <picocli.version>4.7.7</picocli.version>
         <junit-jupiter.version>5.11.3</junit-jupiter.version>
+        <jspecify.version>1.0.0</jspecify.version>
     </properties>
 
     <dependencies>
+        <!-- Nullness and type-use annotations (compile-time only) -->
+        <dependency>
+            <groupId>org.jspecify</groupId>
+            <artifactId>jspecify</artifactId>
+            <version>${jspecify.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- CLI parsing -->
         <dependency>
             <groupId>info.picocli</groupId>
