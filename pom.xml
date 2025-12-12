@@ -20,9 +20,16 @@
         <picocli.version>4.7.7</picocli.version>
         <junit-jupiter.version>5.11.3</junit-jupiter.version>
         <jspecify.version>1.0.0</jspecify.version>
+        <jackson.version>3.0.3</jackson.version>
     </properties>
 
     <dependencies>
+        <!-- JSON serialization/deserialization -->
+        <dependency>
+            <groupId>tools.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
         <!-- Nullness and type-use annotations (compile-time only) -->
         <dependency>
             <groupId>org.jspecify</groupId>
