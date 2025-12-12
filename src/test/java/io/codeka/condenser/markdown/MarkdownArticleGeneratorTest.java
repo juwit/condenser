@@ -86,4 +86,40 @@ class MarkdownArticleGeneratorTest {
         // Then
         assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("generate should include source link when present")
+    void generate_shouldIncludeSourceLinkWhenPresent() throws Exception {
+        // Given
+        Article article = new Article(
+                "Intro",
+                List.of(
+                        new Link(
+                                new URI("https://example.com/java"),
+                                "Java article",
+                                Tag.JAVA,
+                                Optional.empty(),
+                                Optional.of(new Source("Hacker News", new URI("https://news.ycombinator.com"))),
+                                "Java article analysis")
+                )
+        );
+
+        String expected = """
+                Intro
+
+                <!--more-->
+
+                ## ☕ Java
+                * [Java article](https://example.com/java) _via_ [Hacker News](https://news.ycombinator.com)
+
+                > Java article analysis
+
+                """;
+
+        // When
+        String actual = new MarkdownArticleGenerator().generate(article);
+
+        // Then
+        assertEquals(expected, actual);
+    }
 }

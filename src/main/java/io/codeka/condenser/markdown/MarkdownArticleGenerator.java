@@ -73,10 +73,17 @@ public class MarkdownArticleGenerator implements ArticleGenerator {
                 .append(" par ")
                 .append("[").append(author.name()).append("](").append(author.url()).append(")"));
 
-        // generate analysis
+        // source
+        link.source().ifPresent(source -> sb
+                .append(" _via_ ")
+                .append("[").append(source.name()).append("](").append(source.url()).append(")"));
+
+        // blank line
         sb.append('\n')
-                .append('\n')
-                .append("> ")
+                .append('\n');
+
+        // generate analysis
+        sb.append("> ")
                 .append(link.analysis())
                 .append('\n');
         return sb.toString();
