@@ -34,7 +34,7 @@ public class FileArticleRenderer implements ArticleRenderer {
             if (parent != null) {
                 Files.createDirectories(parent);
             }
-            Files.writeString(outputPath, generatedArticle == null ? "" : generatedArticle, StandardCharsets.UTF_8);
+            Files.writeString(outputPath, generatedArticle, StandardCharsets.UTF_8);
         } catch (IOException e) {
             throw new IllegalStateException("Failed to write article to file: " + outputPath, e);
         }
