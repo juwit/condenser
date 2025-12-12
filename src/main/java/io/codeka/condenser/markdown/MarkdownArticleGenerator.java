@@ -50,11 +50,35 @@ public class MarkdownArticleGenerator implements ArticleGenerator {
         linksByTag.forEach((tag, links) -> {
             sb.append("## ").append(tag.markdownTitle()).append('\n');
             for (Link link : links) {
-                sb.append("* ").append(link.title()).append('\n');
+                sb.append(generateLinkMarkdown(link));
             }
             sb.append('\n');
         });
 
+        return sb.toString();
+    }
+
+    private String generateLinkMarkdown(Link link) {
+        var sb = new StringBuilder();
+        // generate link
+        sb.append("* ")
+                .append("[")
+                .append(link.title())
+                .append("](")
+                .append(link.url())
+                .append(")");
+
+        // author
+        link.author().ifPresent(author -> sb
+                .append(" par ")
+                .append("[").append(author.name()).append("](").append(author.url()).append(")"));
+
+        // generate analysis
+        sb.append('\n')
+                .append('\n')
+                .append("> ")
+                .append(link.analysis())
+                .append('\n');
         return sb.toString();
     }
 }
