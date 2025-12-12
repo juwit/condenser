@@ -20,9 +20,8 @@ class ConsoleArticleRendererTest {
         // Capture System.out
         PrintStream originalOut = System.out;
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        PrintStream capture = new PrintStream(baos);
 
-        try {
+        try (PrintStream capture = new PrintStream(baos)) {
             System.setOut(capture);
 
             // When
@@ -33,7 +32,6 @@ class ConsoleArticleRendererTest {
         } finally {
             // Restore System.out
             System.setOut(originalOut);
-            capture.close();
         }
     }
 }
