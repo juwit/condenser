@@ -1,4 +1,4 @@
-package io.codeka.condenser.frontmatter;
+package io.codeka.condenser.generators.frontmatter;
 
 import io.codeka.condenser.domain.Article;
 import io.codeka.condenser.domain.ArticleDateSupplier;

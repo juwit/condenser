@@ -1,5 +1,9 @@
-package io.codeka.condenser.domain;
+package io.codeka.condenser.generators;
 
+import io.codeka.condenser.domain.Article;
+import io.codeka.condenser.domain.ArticleGenerator;
+import io.codeka.condenser.domain.Link;
+import io.codeka.condenser.domain.Tag;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package io.codeka.condenser.markdown;
+package io.codeka.condenser.generators.markdown;
 
 import io.codeka.condenser.domain.Article;
 import io.codeka.condenser.domain.ArticleGenerator;

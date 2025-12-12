@@ -1,4 +1,7 @@
-package io.codeka.condenser.domain;
+package io.codeka.condenser.generators;
+
+import io.codeka.condenser.domain.Article;
+import io.codeka.condenser.domain.ArticleGenerator;
 
 import java.util.List;
 import java.util.Objects;
