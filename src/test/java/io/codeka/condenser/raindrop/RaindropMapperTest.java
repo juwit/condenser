@@ -39,7 +39,8 @@ class RaindropMapperTest {
                 64236151L
         );
 
-        Link link = RaindropMapper.toLink(dto);
+        var raindropMapper = new RaindropMapper();
+        Link link = raindropMapper.toLink(dto);
 
         assertEquals(URI.create(dto.link()), link.url());
         assertEquals(dto.title(), link.title());

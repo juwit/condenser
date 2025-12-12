@@ -14,14 +14,10 @@ import java.util.Optional;
  */
 public final class RaindropMapper {
 
-    private RaindropMapper() {
-        // utility
-    }
-
     /**
      * Convert a {@link RaindropDto} to a domain {@link Link}.
      */
-    public static Link toLink(RaindropDto dto) {
+    public Link toLink(RaindropDto dto) {
         Objects.requireNonNull(dto, "dto must not be null");
 
         URI url = URI.create(dto.link());
@@ -36,7 +32,7 @@ public final class RaindropMapper {
         return new Link(url, title, tag, null, source, analysis);
     }
 
-    private static Tag mapTag(RaindropDto dto) {
+    private Tag mapTag(RaindropDto dto) {
         if (dto.tags() != null && !dto.tags().isEmpty()) {
             for (String raw : dto.tags()) {
                 if (raw == null) continue;
@@ -57,7 +53,7 @@ public final class RaindropMapper {
         return Tag.INTERNET;
     }
 
-    private static Optional<Source> mapSource(RaindropDto dto) {
+    private Optional<Source> mapSource(RaindropDto dto) {
         String domain = dto.domain();
         if (domain == null || domain.isBlank()) return Optional.empty();
         // Construct a canonical HTTPS URL for the domain
@@ -65,7 +61,7 @@ public final class RaindropMapper {
         return Optional.of(new Source(domain, srcUrl));
     }
 
-    private static String pickAnalysis(RaindropDto dto) {
+    private String pickAnalysis(RaindropDto dto) {
         String note = dto.note() == null ? "" : dto.note().trim();
         if (!note.isEmpty()) return note;
         String excerpt = dto.excerpt() == null ? "" : dto.excerpt().trim();
@@ -73,7 +69,7 @@ public final class RaindropMapper {
         return dto.title();
     }
 
-    private static String normalizeTagString(String s) {
+    private String normalizeTagString(String s) {
         // Drop leading emoji and extra whitespace; keep alphanumerics for matching
         String trimmed = s.trim();
         // Many Raindrop tags include an emoji followed by a space; remove the first codepoint if it's not alphanumeric
@@ -84,11 +80,11 @@ public final class RaindropMapper {
         return trimmed;
     }
 
-    private static boolean equalsIgnoreCase(String a, String b) {
+    private boolean equalsIgnoreCase(String a, String b) {
         return a.equalsIgnoreCase(b);
     }
 
-    private static boolean containsIgnoreCase(String haystack, String needle) {
+    private boolean containsIgnoreCase(String haystack, String needle) {
         return haystack.toLowerCase(Locale.ROOT).contains(needle.toLowerCase(Locale.ROOT));
     }
 }
