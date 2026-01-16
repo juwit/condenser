@@ -23,6 +23,7 @@ class MarkdownArticleGeneratorTest {
                 "Intro",
                 List.of(
                         new Link(new URI("https://example.com/java"), "Java article", Tag.JAVA, Optional.empty(), Optional.empty(), "Java article analysis"),
+                        new Link(new URI("https://example.com/java-2"), "Java article 2", Tag.JAVA, Optional.empty(), Optional.empty(), "Java article 2 analysis"),
                         new Link(new URI("https://example.com/linux"), "Linux article", Tag.LINUX, Optional.empty(), Optional.empty(), "Linux article analysis")
                 )
         );
@@ -37,6 +38,10 @@ class MarkdownArticleGeneratorTest {
                 * [Java article](https://example.com/java)
 
                 > Java article analysis
+                
+                * [Java article 2](https://example.com/java-2)
+
+                > Java article 2 analysis
 
                 ## 🐧 Linux
                 

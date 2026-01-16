@@ -52,8 +52,8 @@ public class MarkdownArticleGenerator implements ArticleGenerator {
             sb.append('\n');
             for (Link link : links) {
                 sb.append(generateLinkMarkdown(link));
+                sb.append('\n');
             }
-            sb.append('\n');
         });
 
         return sb.toString();
