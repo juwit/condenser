@@ -6,16 +6,35 @@ package io.codeka.condenser.domain;
  * Each tag carries an emoji and a human-friendly display name.
  */
 public enum Tag {
+    BASICS("👨‍🏫", "Basics"),
+    BUILDPACKS("📦", "Buildpacks"),
+    CLEVERCLOUD("🧠☁️", "Clever Cloud"),
     CLOUD("☁️", "Cloud"),
-    DATABASES("🛢️", "Databases"),
-    DEVOPS("⚙️", "DevOps"),
-    DOCKER("🐳", "Docker"),
-    EVENTS("📅", "Events"),
-    IA("🤖", "IA"),
-    INTERNET("🌐", "Internet"),
+    DATABASES("💾", "Databases"),
+    DEVOPS("👷", "DevOps"),
+    DOCKER("🐋", "Docker"),
+    DOCS("📝", "Docs"),
+    EVENTS("🎫", "Events"),
+    GCP("☁️", "GCP"),
+    GIT("🔀", "Git"),
+    GITLAB("🦊", "GitLab"),
+    GO("🐹", "Go"),
+    IA("🧠", "IA"),
+    INTERNET("🛜", "Internet"),
     JAVA("☕", "Java"),
     KUBERNETES("☸️", "Kubernetes"),
-    LINUX("🐧", "Linux");
+    LINUX("🐧", "Linux"),
+    OBSERVABILITY("👀", "Observability"),
+    OPENTOFU("🍢", "OpenTofu"),
+    SECURITY("🔒", "Security"),
+    SHELL("🖥️", "Shell"),
+    SONARQUBE("🔍", "SonarQube"),
+    SPRING_BOOT("🌱", "Spring Boot"),
+    TERRAFORM("🏗️☁️", "Terraform"),
+    TOMCAT("🐱", "Tomcat"),
+    TOOLS("🛠️", "Tools"),
+    TUTORIAL("📚", "Tutorial"),
+    VAULT("🔒", "Vault");
 
     private final String emoji;
     private final String displayName;
