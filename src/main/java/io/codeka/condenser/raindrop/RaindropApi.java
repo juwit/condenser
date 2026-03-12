@@ -4,9 +4,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.service.annotation.GetExchange;
 import org.springframework.web.service.annotation.HttpExchange;
 
-@HttpExchange
+@HttpExchange(url="https://api.raindrop.io/rest/v1")
 public interface RaindropApi {
 
-    @GetExchange("raindrops/{{collectionId}}")
+    @GetExchange("/raindrops/{collectionId}")
     GetRaindropsResponseDto getRaindrops(@PathVariable long collectionId);
 }
