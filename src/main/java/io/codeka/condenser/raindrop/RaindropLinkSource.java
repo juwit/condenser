@@ -13,14 +13,17 @@ public class RaindropLinkSource implements LinkSource {
 
     private final RaindropMapper raindropMapper;
 
-    public RaindropLinkSource(RaindropApi raindropApi, RaindropMapper raindropMapper) {
+    private final RaindropConfigurationProperties properties;
+
+    public RaindropLinkSource(RaindropApi raindropApi, RaindropMapper raindropMapper, RaindropConfigurationProperties properties) {
         this.raindropApi = raindropApi;
         this.raindropMapper = raindropMapper;
+        this.properties = properties;
     }
 
     @Override
     public List<Link> getLinks() {
-        var response = raindropApi.getRaindrops(1);
+        var response = raindropApi.getRaindrops(properties.getCollectionId());
         return response.items().stream().map(raindropMapper::toLink).toList();
     }
 }

@@ -18,7 +18,11 @@ class RaindropLinkSourceTest {
         // Arrange
         RaindropApi api = mock(RaindropApi.class);
         RaindropMapper mapper = mock(RaindropMapper.class);
-        RaindropLinkSource linkSource = new RaindropLinkSource(api, mapper);
+
+        var properties = new RaindropConfigurationProperties();
+        properties.setCollectionId(64236151L);
+
+        RaindropLinkSource linkSource = new RaindropLinkSource(api, mapper, properties);
 
         RaindropDto dto1 = mock(RaindropDto.class);
         RaindropDto dto2 = mock(RaindropDto.class);
