@@ -84,9 +84,10 @@ public class MarkdownArticleGenerator implements ArticleGenerator {
                 .append('\n');
 
         // generate analysis
-        sb.append("> ")
-                .append(link.analysis())
-                .append('\n');
+        String analysis = link.analysis();
+        if (!analysis.isBlank()) {
+            analysis.lines().forEach(line -> sb.append("> ").append(line).append('\n'));
+        }
         return sb.toString();
     }
 }

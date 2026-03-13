@@ -131,4 +131,41 @@ class MarkdownArticleGeneratorTest {
         // Then
         assertEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("generate should prefix multi-line analysis with > ")
+    void generate_shouldPrefixMultiLineAnalysis() throws Exception {
+        // Given
+        Article article = new Article(
+                "Intro",
+                List.of(
+                        new Link(
+                                new URI("https://example.com/java"),
+                                "Java article",
+                                Tag.JAVA,
+                                Optional.empty(),
+                                Optional.empty(),
+                                "line 1\nline 2")
+                )
+        );
+
+        String expected = """
+                Intro
+
+                <!--more-->
+
+                ## ☕ Java
+                
+                * [Java article](https://example.com/java)
+
+                > line 1
+                > line 2
+                """;
+
+        // When
+        String actual = new MarkdownArticleGenerator().generate(article).strip();
+
+        // Then
+        assertEquals(expected.strip(), actual);
+    }
 }
